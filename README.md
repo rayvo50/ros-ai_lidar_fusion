@@ -21,7 +21,7 @@ Sabendo o FOV da camera e a resolução da frame é possível calcular os angulo
 
 
 
- <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png?raw=true" width="420"> | <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVV.png?raw=true" width="420"> 
+ <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png?raw=true" width="420">  <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVV.png?raw=true" width="420"> 
 
 
 ![alt text](https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png?raw=true)
