@@ -19,6 +19,11 @@ Este módulo foca-se em permitir a correspondencia da informação proveniente d
 ## Implementação
 Sabendo o FOV da camera e a resolução da frame é possível calcular os angulos que o pixel faz com o eixo da camera na horizontal e na vertical
 
+
+
+| <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png?raw=true" width="350"> | <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVV.png?raw=true" width="350"> | 
+
+
 ![alt text](https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png?raw=true)
 ![Screenshot](https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png)
 
