@@ -21,7 +21,7 @@ Sabendo o FOV da camera e a resolução da frame, é possível calcular os ângu
 
  <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/FOVH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/FOVV.png?raw=true" width="400">
 
- <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/angH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/angV.png?raw=true" width="400">
+ <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/AngH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/AngV.png?raw=true" width="400">
  
 Tendo obtido os angulos referentes ao pixel fornecido, é necessário filtrar a nuvem de pontos de modo a obter-se apenas os pontos que estejam nos angulos corretos. Estando a nuvem de pontos representada num referencial XYZ, basta percorrer o vetor dos pontos, calculando os angulos que cada ponto faz com a horizontal e a vertical, e guardar apenas aqueles em que os angulos estejam perto dos angulos calculados anteriormente. A figura abaixo ilustra como se calcularia o angulo na horizontal de um pixel detetado na camera frontal.
   
