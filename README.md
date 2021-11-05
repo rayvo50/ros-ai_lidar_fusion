@@ -4,13 +4,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-AngularJS-powered HTML5 Markdown editor.
-
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
+# general description
 
 ## Introdução
 Este projeto enquadra-se no contexto de um barco autónomo, desenvolvido pelo núcleo Técnico Solar Boat. Assume-se a existencia um módulo de AI que atua nas imagens provenientes das 4 cameras do barco e reconhece a presença de obstáculos. O módulo de AI publica, usando o ROS, informação relativa ao pixel onde o objeto foi encontrado. Assume-se também a existencia de um módulo que publica a informação proveniente de um sensor de distancias, por exemplo um lidar.
@@ -30,6 +24,14 @@ Tendo obtido os angulos referentes ao pixel fornecido, é necessário filtrar a 
 Assim, obtem-se um conjunto restrito de pontos, sendo possivel obter as coordenadas aproximadas do objeto detetado pela AI.
  
 ## Correr o programa
+Antes de lançar o ros como habitualmente, é necessário alterar o ficheiro "~/catkin_ws/src/ros_adapter/scripts/server.py" para que as mensagens publicadas pelo simulador possam ser sincronizadas com o nodo de teste disponibilizado. Substituir
+```py
+header.stamp = rospy.Time.from_sec(request.timeInSeconds)
+```
+por
+```py
+header.stamp = rospy.Time.now()
+```
 
 
 
