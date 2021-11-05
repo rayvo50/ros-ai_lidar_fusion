@@ -17,15 +17,11 @@ Este projeto enquadra-se no contexto de um barco autónomo, desenvolvido pelo n�
 Este módulo foca-se em permitir a correspondencia da informação proveniente da AI detetar um objeto com os dados fornecidos pelo lidar.
 
 ## Implementação
-Sabendo o FOV da camera e a resolução da frame é possível calcular os angulos que o pixel faz com o eixo da camera na horizontal e na vertical
-
-
-
+Sabendo o FOV da camera e a resolução da frame é possível calcular os ângulos que o pixel faz com o eixo da camera na horizontal e na vertical, como representado nas imagens abaixo.
  <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png?raw=true" width="400">  <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVV.png?raw=true" width="400"> 
 
+ <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/AngH.png?raw=true" width="400">  <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/AngV.png?raw=true" width="400"> 
 
-![alt text](https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png?raw=true)
-![Screenshot](https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png)
 
 Markdown is a lightweight markup language based on the formatting conventions
 that people naturally use in email.
