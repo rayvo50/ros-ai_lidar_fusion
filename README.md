@@ -22,7 +22,9 @@ Tendo obtido os angulos referentes ao pixel fornecido, é necessário filtrar a 
  <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/esquema_angulos.png?raw=true" width="400">
 
 Assim, obtem-se um conjunto restrito de pontos, sendo possivel obter as coordenadas aproximadas do objeto detetado pela AI.
- 
+
+## Construir o nodo
+
 ## Correr o programa
 Antes de lançar o ros como habitualmente, é necessário alterar o ficheiro "~/catkin_ws/src/ros_adapter/scripts/server.py" para que as mensagens publicadas pelo simulador possam ser sincronizadas com o nodo de teste disponibilizado. Substituir
 ```py
@@ -37,7 +39,18 @@ Depois, a plataforma pode ser lançada como habitualmente:
 source ~/catkin_ws/devel/setup.bash
 roslaunch ~/catkin_ws/src/ros_scenario/launch/launch_njord_stack.launch
 ```
-
+Para correr o nodo:
+```sh
+rosrun ai_lidar_fusion converter.py
+```
+Para testar com um certo pixel fazer uso do ficheiro sub_test.py, alterando-o para testar vários pixeis.
+```sh
+rosrun ai_lidar_fusion test_pub.py
+```
+Para facilitar a escolha do pixel a ser testado, fazer uso do ficheiro camera.py. Passando o rato sobre a imagem é possível ver qual o pixel que se pretende.
+```sh
+rosrun ai_lidar_fusion camera.py
+```
 
 
 
