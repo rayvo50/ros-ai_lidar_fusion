@@ -18,9 +18,10 @@ Este módulo foca-se em permitir a correspondencia da informação proveniente d
 
 ## Implementação
 Sabendo o FOV da camera e a resolução da frame é possível calcular os ângulos que o pixel faz com o eixo da camera na horizontal e na vertical, como representado nas imagens abaixo.
+
  <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVH.png?raw=true" width="400">  <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/FOVV.png?raw=true" width="400"> 
 
- <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/AngH.png?raw=true" width="400">  <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/AngV.png?raw=true" width="400"> 
+ <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/AngH.png?raw=true" width="400">  <img src="https://github.com/rayvo50/images_for_readmes/blob/main/images/angV.png?raw=true" width="400"> 
 
 
 Markdown is a lightweight markup language based on the formatting conventions
