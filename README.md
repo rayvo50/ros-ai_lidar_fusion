@@ -1,10 +1,6 @@
 ## _AI_LIDAR_FUSION_
 
- <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/poweredby.png?raw=true" width="170">   
-
-[![N|Solid]("https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/FOVH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/FOVV.png?raw=true" widht=160 )](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+<img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/poweredby.png?raw=true" width="170">   
 
 # general description
 
@@ -26,6 +22,11 @@ Tendo obtido os angulos referentes ao pixel fornecido, é necessário filtrar a 
 Assim, obtem-se um conjunto restrito de pontos, sendo possivel obter as coordenadas aproximadas do objeto detetado pela AI.
 
 ## Construir o nodo
+Começar por criar um novo package dentro do workspace
+```sh
+cd ~/catkin_ws
+catkin_create_pkg ai_lidar_fusion
+```
 
 ## Correr o programa
 Antes de lançar o ros como habitualmente, é necessário alterar o ficheiro "~/catkin_ws/src/ros_adapter/scripts/server.py" para que as mensagens publicadas pelo simulador possam ser sincronizadas com o nodo de teste disponibilizado. Substituir
