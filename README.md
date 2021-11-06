@@ -18,6 +18,11 @@ Tendo obtido os angulos referentes ao pixel fornecido, é necessário filtrar a 
 
 Assim, obtem-se um conjunto restrito de pontos, sendo possivel obter as coordenadas aproximadas do objeto detetado pela AI.
 
+
+## Funções
+explicar as várias funções
+
+
 ## Construir o nodo
 Começar por criar um novo package dentro do workspace
 ```sh
