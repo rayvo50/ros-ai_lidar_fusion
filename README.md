@@ -1,11 +1,8 @@
-## _AI_LIDAR_FUSION_
+## _AI_Lidar_fusion_
 
-<img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/poweredby.png?raw=true" width="170">   
-
-# general description
 
 ## Introdução
-Este projeto enquadra-se no contexto de um barco autónomo, desenvolvido pelo núcleo Técnico Solar Boat. Assume-se a existencia um módulo de AI que atua nas imagens provenientes das 4 cameras do barco e reconhece a presença de obstáculos. O módulo de AI publica, usando o ROS, informação relativa ao pixel onde o objeto foi encontrado. Assume-se também a existencia de um módulo que publica a informação proveniente de um sensor de distancias, por exemplo um lidar.
+Este projeto foi desenvolvido no ambito do recrutamento do núcleo Técnico Solar Boat. Assume-se a existencia um módulo de AI que atua nas imagens provenientes das 4 cameras do barco e reconhece a presença de obstáculos. O módulo de AI publica, usando o ROS, informação relativa ao pixel onde o objeto foi encontrado. Assume-se também a existencia de um módulo que publica a informação proveniente de um sensor de distancias, por exemplo um lidar.
 Este módulo foca-se em permitir a correspondencia da informação proveniente da AI detetar um objeto com os dados fornecidos pelo lidar.
 
 ## Implementação
