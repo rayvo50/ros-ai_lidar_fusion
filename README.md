@@ -23,15 +23,10 @@ Assim, obtem-se um conjunto restrito de pontos, sendo possivel obter as coordena
 
 Descrição das funções mais importantes do projeto
 
-* `arr = numpify(msg, ...)` - try to get a numpy object from a message
-* `msg = msgify(MessageType, arr, ...)` - try and convert a numpy object to a message
-
-Currently supports:
-
 * `calc_angle`:
    Recorrendo às imagens acima, bem como à imagem abaixo, facilmente se percebe o calculo feito nesta função.
    Primeiro calcula-se "dipH" usando "FOVx" e "w/2" e depois "angleH" a partir de "x" e "dipH". Para o angulo vertical o processo é identico.
-    <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/esquema_angulos.png?raw=true" width="400">
+   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/calc_angle.png?raw=true" width="400">
 
 
 * `sensor_msgs.msg.Image` &harr; 2/3-D `np.array`, similar to the function of `cv_bridge`, but without the dependency on `cv2`
