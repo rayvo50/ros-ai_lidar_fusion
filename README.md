@@ -27,11 +27,25 @@ explicar as várias funções
 Começar por criar um novo package dentro do workspace 
 ```sh
 cd ~/catkin_ws
-catkin_create_pkg ai_lidar_fusion
+catkin_create_pkg ai_lidar_fusion rospy std_msgs sensor_msgs
 ```
-escrever aqui tipo copiar os ficheiros, torná-los executaveis etc ( n interessa muito pq ninguem vai fazer isto)
+Depois é necessário copiar os ficheiros deste repositório e troná-los executaveis com o comando:
+```sh
+chmod +x <path>/converter.py
+chmod +x <path>/test_pub.py
+chmod +x <path>/camera.py
+```
+Como o nodo de teste usa uma menssagem customizada, é possível que seja necessáro fazer alterações em alguns ficheiros. Mais informação contactar-me ou consultar http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv. 
+
+Finalmente correr
+```sh
+cd ~/catkin_ws
+catkin_make
+source devel/setup.bash
+```
 
 ## Correr o programa
+Para que os pontos do lidar possam ser visualizados no rviz sem estarem espelhados, é necessário fazer uma pequena alteração no simulador. No menu do lado esquerdo selecionar NjordVessel > SensorRig > Lidar. No menu que aparece do lado direito, alterar o campo "Scale X" para "-1".
 Antes de lançar o ros como habitualmente, é necessário alterar o ficheiro "~/catkin_ws/src/ros_adapter/scripts/server.py" para que as mensagens publicadas pelo simulador possam ser sincronizadas com o nodo de teste disponibilizado. Substituir
 ```py
 header.stamp = rospy.Time.from_sec(request.timeInSeconds)
