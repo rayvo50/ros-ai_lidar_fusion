@@ -1,7 +1,5 @@
 ## _AI_Lidar_fusion_
 
-https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/AngH.png
-
 <img src="https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/poweredby.png?raw=true" width="150">
 
 ## Introdução
@@ -11,13 +9,13 @@ Este módulo foca-se em permitir a correspondencia da informação proveniente d
 ## Implementação
 Sabendo o FOV da camera e a resolução da frame, é possível calcular os ângulos que um pixel (representativo do objeto detetado na AI) faz com o eixo da camera na horizontal e na vertical, como representado nas imagens abaixo.
 
- <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/FOVH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/FOVV.png?raw=true" width="400">
+ <img src="https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/FOVH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/FOVV.png?raw=true" width="400">
 
- <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/AngH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/AngV.png?raw=true" width="400">
+ <img src="https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/AngH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/AngV.png?raw=true" width="400">
  
 Tendo obtido os angulos referentes ao pixel fornecido, é necessário filtrar a nuvem de pontos de modo a obter-se apenas os pontos que estejam nos angulos corretos. Estando a nuvem de pontos representada num referencial XYZ, basta percorrer o vetor dos pontos, calculando os angulos que cada ponto faz com a horizontal e a vertical, e guardar apenas aqueles em que os angulos estejam perto dos angulos calculados anteriormente. A figura abaixo ilustra como se calcularia o angulo na horizontal de um pixel detetado na camera frontal.
 
- <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/esquema_angulos.png?raw=true" width="400">
+ <img src="https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/esquema_angulos.png?raw=true" width="400">
 
 Assim, obtem-se um conjunto restrito de pontos, sendo possivel obter as coordenadas aproximadas do objeto detetado pela AI.
 
@@ -30,7 +28,7 @@ Descrição das funções mais importantes do projeto
    Recorrendo às imagens acima, bem como à imagem abaixo, facilmente se percebe o calculo feito nesta função.
    Primeiro calcula-se "dipH" usando "FOVx" e "w/2" e depois "angleH" a partir de "x" e "dipH". Para o angulo vertical o processo é identico.
    
-   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/calc_angle.png?raw=true" width="300">
+   <img src="https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/calc_angle.png?raw=true" width="300">
 
 * `getpointsub`:
   A partir de "angleH", "angleV" e "desvio" definem-se os limites angulares em que os pontos serão filtrados.
