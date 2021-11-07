@@ -26,28 +26,10 @@ Descrição das funções mais importantes do projeto
 * `calc_angle`:
    Recorrendo às imagens acima, bem como à imagem abaixo, facilmente se percebe o calculo feito nesta função.
    Primeiro calcula-se "dipH" usando "FOVx" e "w/2" e depois "angleH" a partir de "x" e "dipH". Para o angulo vertical o processo é identico.
-   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/calc_angle.png?raw=true" width="400">
+   
+   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/calc_angle.png?raw=true" width="300">
 
-
-* `sensor_msgs.msg.Image` &harr; 2/3-D `np.array`, similar to the function of `cv_bridge`, but without the dependency on `cv2`
-* `nav_msgs.msg.OccupancyGrid` &harr; `np.ma.array`
-* `geometry.msg.Vector3` &harr; 1-D `np.array`. `hom=True` gives `[x, y, z, 0]`
-* `geometry.msg.Point` &harr; 1-D `np.array`. `hom=True` gives `[x, y, z, 1]`
-* `geometry.msg.Quaternion` &harr; 1-D `np.array`, `[x, y, z, w]`
-* `geometry.msg.Transform` &harr; 4&times;4 `np.array`, the homogeneous transformation matrix
-* `geometry.msg.Pose` &harr; 4&times;4 `np.array`, the homogeneous transformation matrix from the origin
-
-Support for more types can be added with:
-
-```python
-@ros_numpy.converts_to_numpy(SomeMessageClass)
-def convert(my_msg):
-    return np.array(...)
-
-@ros_numpy.converts_from_numpy(SomeMessageClass)
-def convert(my_array):
-    return SomeMessageClass(...)
-```
+* `getpointsub`:
 
 
 ## Construir o nodo
