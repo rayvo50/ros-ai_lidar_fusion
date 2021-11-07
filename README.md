@@ -24,11 +24,12 @@ explicar as várias funções
 
 
 ## Construir o nodo
-Começar por criar um novo package dentro do workspace
+Começar por criar um novo package dentro do workspace 
 ```sh
 cd ~/catkin_ws
 catkin_create_pkg ai_lidar_fusion
 ```
+escrever aqui tipo copiar os ficheiros, torná-los executaveis etc ( n interessa muito pq ninguem vai fazer isto)
 
 ## Correr o programa
 Antes de lançar o ros como habitualmente, é necessário alterar o ficheiro "~/catkin_ws/src/ros_adapter/scripts/server.py" para que as mensagens publicadas pelo simulador possam ser sincronizadas com o nodo de teste disponibilizado. Substituir
