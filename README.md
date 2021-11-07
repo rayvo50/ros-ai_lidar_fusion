@@ -33,7 +33,7 @@ Descrição das funções mais importantes do projeto
   A partir de "angleH", "angleV" e "desvio" definem-se os limites angulares em que os pontos serão filtrados.
   O calculo dos angulos é diferente conforme qual for a camera, uma vez que a sua orientação é diferente. Na Figura acima está esquematizado como se pode proceder para calcular os angulos. No caso dos pares front-back e port-starboard o calculo daria o mesmo resultado. Assim, é necessário retirar os pontos que estão no lado oposto (aka na analise da camere da frente remover os pontos com y negtivo). Para filtrar os pontos basta calcular para cada ponto os angulos e guardá-lo apenas se estiver dentro dos limites.
   
-* `getpointsub`:
+* `calc_distance`:
 Esta função apenas calcula a média dos pontos recebidos por `getpointsub`. Dependendo de uma implementação futura, esta função pode ser melhorada.
 
 * Sobre o `ApproximateTimeSynchronizer()`:
