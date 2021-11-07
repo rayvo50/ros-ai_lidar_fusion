@@ -30,7 +30,14 @@ Descrição das funções mais importantes do projeto
    <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/calc_angle.png?raw=true" width="300">
 
 * `getpointsub`:
+  A partir de "angleH", "angleV" e "desvio" definem-se os limites angulares em que os pontos serão filtrados.
+  O calculo dos angulos é diferente conforme qual for a camera, uma vez que a sua orientação é diferente. Na Figura acima está esquematizado como se pode proceder para calcular os angulos. No caso dos pares front-back e port-starboard o calculo daria o mesmo resultado. Assim, é necessário retirar os pontos que estão no lado oposto (aka na analise da camere da frente remover os pontos com y negtivo). Para filtrar os pontos basta calcular para cada ponto os angulos e guardá-lo apenas se estiver dentro dos limites.
+  
+* `getpointsub`:
+Esta função apenas calcula a média dos pontos recebidos por `getpointsub`. Dependendo de uma implementação futura, esta função pode ser melhorada.
 
+* Sobre o `ApproximateTimeSynchronizer()`:
+ Este filtro é necessário para garantir a sincronização das mensagens publicadas pelo simulador e pelo nodo de teste. O filro recebe as mensagens dos tópicos e retorna-as se encontrar mensagens com uma time stamp semelhante. Isto permite que a imagem analizada pela AI terá o mesmo instante de tempo que a nuvem de pontos do lidar. É tambem necessário para permitir a análise de dados provenientes de vários tópicos dentro da mesma função de callback.
 
 ## Construir o nodo
 Começar por criar um novo package dentro do workspace 
