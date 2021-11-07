@@ -1,4 +1,4 @@
-## _AI_Lidar_fusion_
+## AI_Lidar_fusion
 
 <img src="https://github.com/rayvo50/ros-ai_lidar_fusion/blob/main/images/poweredby.png?raw=true" width="150">
 
