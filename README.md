@@ -40,7 +40,7 @@ Esta função apenas calcula a média dos pontos recebidos por `getpointsub`. Nu
  Este filtro é necessário para garantir a sincronização das mensagens publicadas pelo simulador e pelo nodo de teste. O filro recebe as mensagens dos tópicos e retorna-as se encontrar mensagens com uma "time stamp" semelhante. Isto permite que a imagem analizada pela AI terá o mesmo instante de tempo que a nuvem de pontos do lidar. É tambem necessário para permitir a análise de dados provenientes de vários tópicos dentro da mesma função de callback.
 
 ## Construir o nodo
-Nota: Não foi possível testar estas instruções pelo que se tiver a dar problemas é só contactar-me. 
+Nota: Não foi possível testar estas instruções pelo que se surgirem problemas é só contactar-me. 
 
 Começar por criar um novo package dentro do workspace 
 ```sh
