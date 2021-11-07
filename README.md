@@ -2,11 +2,11 @@
 <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/poweredby.png?raw=true" width="150">
 
 ## Introdução
-Este projeto foi desenvolvido no ambito do recrutamento para o núcleo Técnico Solar Boat. Assume-se a existencia um módulo de AI que atua nas imagens provenientes das 4 cameras do barco e reconhece a presença de obstáculos. O módulo de AI publica, usando o ROS, informação relativa ao pixel onde o objeto foi encontrado. Assume-se também a existencia de um módulo que publica a informação proveniente de um sensor de distancias, por exemplo um lidar.
+Este projeto foi desenvolvido no âmbito do recrutamento para o núcleo Técnico Solar Boat. Assume-se a existencia um módulo de AI que atua nas imagens provenientes das 4 cameras do barco e reconhece a presença de obstáculos. O módulo de AI publica, usando o ROS, informação relativa ao pixel onde o objeto foi encontrado. Assume-se também a existencia de um módulo que publica a informação proveniente de um sensor de distâncias, por exemplo um lidar.
 Este módulo foca-se em permitir a correspondencia da informação proveniente da AI detetar um objeto com os dados fornecidos pelo lidar.
 
 ## Implementação
-Sabendo o FOV da camera e a resolução da frame, é possível calcular os ângulos que o pixel representativo do objeto detetado na AI faz com o eixo da camera na horizontal e na vertical, como representado nas imagens abaixo.
+Sabendo o FOV da camera e a resolução da frame, é possível calcular os ângulos que um pixel (representativo do objeto detetado na AI) faz com o eixo da camera na horizontal e na vertical, como representado nas imagens abaixo.
 
  <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/FOVH.png?raw=true" width="400">   <img src="https://github.com/rayvo50/images/blob/main/ai_lidar_fusion/FOVV.png?raw=true" width="400">
 
@@ -34,12 +34,14 @@ Descrição das funções mais importantes do projeto
   O calculo dos angulos é diferente conforme qual for a camera, uma vez que a sua orientação é diferente. Na Figura acima está esquematizado como se pode proceder para calcular os angulos. No caso dos pares front-back e port-starboard o calculo daria o mesmo resultado. Assim, é necessário retirar os pontos que estão no lado oposto (aka na analise da camere da frente remover os pontos com y negtivo). Para filtrar os pontos basta calcular para cada ponto os angulos e guardá-lo apenas se estiver dentro dos limites.
   
 * `calc_distance`:
-Esta função apenas calcula a média dos pontos recebidos por `getpointsub`. Dependendo de uma implementação futura, esta função pode ser melhorada.
+Esta função apenas calcula a média dos pontos recebidos por `getpointsub`. Numa implementação futura, esta função pode ser melhorada de forma a publicar os dados para o controlador de direção do barco.
 
 * Sobre o `ApproximateTimeSynchronizer()`:
- Este filtro é necessário para garantir a sincronização das mensagens publicadas pelo simulador e pelo nodo de teste. O filro recebe as mensagens dos tópicos e retorna-as se encontrar mensagens com uma time stamp semelhante. Isto permite que a imagem analizada pela AI terá o mesmo instante de tempo que a nuvem de pontos do lidar. É tambem necessário para permitir a análise de dados provenientes de vários tópicos dentro da mesma função de callback.
+ Este filtro é necessário para garantir a sincronização das mensagens publicadas pelo simulador e pelo nodo de teste. O filro recebe as mensagens dos tópicos e retorna-as se encontrar mensagens com uma "time stamp" semelhante. Isto permite que a imagem analizada pela AI terá o mesmo instante de tempo que a nuvem de pontos do lidar. É tambem necessário para permitir a análise de dados provenientes de vários tópicos dentro da mesma função de callback.
 
 ## Construir o nodo
+Nota: Não foi possível testar estas instruções pelo que se tiver a dar problemas é só contactar-me. 
+
 Começar por criar um novo package dentro do workspace 
 ```sh
 cd ~/catkin_ws
@@ -59,6 +61,7 @@ cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 ```
+
 
 ## Correr o programa
 Para que os pontos do lidar possam ser visualizados no rviz sem estarem espelhados, é necessário fazer uma pequena alteração no simulador. No menu do lado esquerdo selecionar NjordVessel > SensorRig > Lidar. No menu que aparece do lado direito, alterar o campo "Scale X" para "-1".
